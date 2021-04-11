@@ -1,0 +1,515 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>
+			Diff
+		</title>
+		<style>
+			#left {
+				overflow: auto;
+				left: 0;
+				width: 50%;
+				position: absolute;
+				height: 100%;
+			}
+			#right {
+				overflow: auto;
+				border-left: 1px solid #000;
+				width: 50%;
+				position: absolute;
+				right: 0;
+				height: 100%;
+			}
+			html {
+				height: 100%;
+			}
+			body {
+				padding: 0;
+				margin: 0;
+				min-height: 100%;
+			}
+			.stringContainer {
+				overflow: hidden;
+				width: fit-content;
+				border-bottom: 1px solid #bbb;
+				min-width: 100%;
+			}
+			.stringNumber {
+				background-color: #eee;
+				border-right: 1px solid #bbb;
+				width: 35px;
+				float: left;
+				height: 20px;
+				padding-right: 5px;
+				text-align: right;
+			}
+			.stringContent {
+				overflow: hidden;
+				white-space: nowrap;
+				height: 20px;
+			}
+			.stringNumber.added {
+				background-color: #76e876;
+			}
+			.stringNumber.changed {
+				background-color: #76a0e8;
+			}
+			.stringNumber.deleted {
+				background-color: #808080;
+			}
+			.stringContent.added {
+				background-color: #b5ffb6;
+			}
+			.stringContent.changed {
+				background-color: #b5d0ff;
+			}
+			.stringContent.deleted {
+				background-color: #b1b1b1;
+			}
+			#header {
+				overflow: hidden;
+				white-space: nowrap;
+				background: linear-gradient(0deg, #ccc, #eee, #ccc);
+				font-size: 22px;
+				border-bottom: 1px solid #000;
+				height: 25px;
+			}
+			#header_left {
+				left: 0;
+				width: 50%;
+				position: absolute;
+				text-align: center;
+			}
+			#header_right {
+				border-left: 1px solid #000;
+				width: 50%;
+				position: absolute;
+				right: 0;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<div id="header_left">
+				a.txt
+			</div>
+			<div id="header_right">
+				b.txt
+			</div>
+		</div>
+	<div id="left">
+		<div class="stringContainer">
+			<div class="stringNumber">
+				1
+			</div>
+			<div class="stringContent">
+				This part of the
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				2
+			</div>
+			<div class="stringContent">
+				document has stayed the
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				3
+			</div>
+			<div class="stringContent">
+				same from version to
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				4
+			</div>
+			<div class="stringContent">
+				version.  It shouldn't
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				5
+			</div>
+			<div class="stringContent">
+				be shown if it doesn't
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				6
+			</div>
+			<div class="stringContent">
+				change.  Otherwise, that
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				7
+			</div>
+			<div class="stringContent">
+				would not be helping to
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber changed">
+				8
+			</div>
+			<div class="stringContent changed">
+				compress the size of the
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber changed">
+				9
+			</div>
+			<div class="stringContent changed">
+				changes.
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber changed">
+				10
+			</div>
+			<div class="stringContent changed">
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber changed">
+				11
+			</div>
+			<div class="stringContent changed">
+				This paragraph contains
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber changed">
+				12
+			</div>
+			<div class="stringContent changed">
+				text that is outdated.
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber changed">
+				13
+			</div>
+			<div class="stringContent changed">
+				It will be deleted in the
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber changed">
+				14
+			</div>
+			<div class="stringContent changed">
+				near future.
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				15
+			</div>
+			<div class="stringContent">
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				16
+			</div>
+			<div class="stringContent">
+				It is important to spell
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber changed">
+				17
+			</div>
+			<div class="stringContent changed">
+				check this dokument.
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				18
+			</div>
+			<div class="stringContent">
+				On the other hand, a
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber deleted">
+				19
+			</div>
+			<div class="stringContent deleted">
+				misspelled word isn't
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber deleted">
+				20
+			</div>
+			<div class="stringContent deleted">
+				the end of the world.
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				21
+			</div>
+			<div class="stringContent">
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				22
+			</div>
+			<div class="stringContent">
+				Nothing in the rest of
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				23
+			</div>
+			<div class="stringContent">
+				this paragraph needs to
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				24
+			</div>
+			<div class="stringContent">
+				be changed. Things can
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				25
+			</div>
+			<div class="stringContent">
+				be added after it.
+			</div>
+		</div>
+	</div>
+	<div id="right">
+		<div class="stringContainer">
+			<div class="stringNumber added">
+				1
+			</div>
+			<div class="stringContent added">
+				This is an important
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber added">
+				2
+			</div>
+			<div class="stringContent added">
+				notice! It should
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber added">
+				3
+			</div>
+			<div class="stringContent added">
+				therefore be located at
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber added">
+				4
+			</div>
+			<div class="stringContent added">
+				the beginning of this
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber added">
+				5
+			</div>
+			<div class="stringContent added">
+				document!
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber added">
+				6
+			</div>
+			<div class="stringContent added">
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				7
+			</div>
+			<div class="stringContent">
+				This part of the
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				8
+			</div>
+			<div class="stringContent">
+				document has stayed the
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				9
+			</div>
+			<div class="stringContent">
+				same from version to
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				10
+			</div>
+			<div class="stringContent">
+				version.  It shouldn't
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				11
+			</div>
+			<div class="stringContent">
+				be shown if it doesn't
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				12
+			</div>
+			<div class="stringContent">
+				change.  Otherwise, that
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				13
+			</div>
+			<div class="stringContent">
+				would not be helping to
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber changed">
+				14
+			</div>
+			<div class="stringContent changed">
+				compress anything.
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				15
+			</div>
+			<div class="stringContent">
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				16
+			</div>
+			<div class="stringContent">
+				It is important to spell
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber changed">
+				17
+			</div>
+			<div class="stringContent changed">
+				check this document.
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				18
+			</div>
+			<div class="stringContent">
+				On the other hand, a
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				19
+			</div>
+			<div class="stringContent">
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				20
+			</div>
+			<div class="stringContent">
+				Nothing in the rest of
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				21
+			</div>
+			<div class="stringContent">
+				this paragraph needs to
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				22
+			</div>
+			<div class="stringContent">
+				be changed. Things can
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber">
+				23
+			</div>
+			<div class="stringContent">
+				be added after it.
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber added">
+				24
+			</div>
+			<div class="stringContent added">
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber added">
+				25
+			</div>
+			<div class="stringContent added">
+				This paragraph contains
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber added">
+				26
+			</div>
+			<div class="stringContent added">
+				important new additions
+			</div>
+		</div>
+		<div class="stringContainer">
+			<div class="stringNumber added">
+				27
+			</div>
+			<div class="stringContent added">
+				to this document.
+			</div>
+		</div>
+	</div>
+	</body>
+</html>
